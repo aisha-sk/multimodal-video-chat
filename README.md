@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# multimodal video chat
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+this is a full-stack project that lets you interact with youtube videos by retrieving and analyzing their transcripts. the goal is to eventually support both text-based and visual queries through a simple web interface.
 
-## Available Scripts
+## about the project
 
-In the project directory, you can run:
+this project is being built as part of headstarter's accelerated program. it follows one of the suggested multimodal tracks and is focused on building a working prototype with both nlp and visual understanding capabilities.
 
-### `npm start`
+## what’s working
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+so far, the backend is set up to extract youtube transcripts through an api:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- built a flask backend that accepts a youtube url and returns its transcript
+- uses the `youtube-transcript-api` to fetch subtitle data
+- parses and validates youtube urls to extract the video id
+- endpoint: `post /api/transcript` with body like `{"url": "https://youtube.com/watch?v=..."}`
+- tested with real urls and returns structured transcript output (text with timestamps)
 
-### `npm test`
+## what’s next
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- build the frontend interface in react
+- allow users to paste a link and view the transcript on screen
+- add chat functionality to ask natural language questions based on the transcript
+- break transcript into chunks and generate vector embeddings (rag style)
+- explore adding visual question answering later using gemini vision or clip model to analyze video frames
 
-### `npm run build`
+## original readme content below (create react app defaults)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+this project was bootstrapped with [create react app](https://github.com/facebook/create-react-app).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
